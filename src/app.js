@@ -29,6 +29,7 @@ function displayWeather(response) {
   let windElement = document.querySelector("#wind");
   let feelingElement = document.querySelector("#feeling");
   let timeElement = document.querySelector("#time-stamp");
+  let iconElement = document.querySelector("#weather-icon");
 
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   cityElement.innerHTML = response.data.city;
@@ -37,6 +38,8 @@ function displayWeather(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   feelingElement.innerHTML = Math.round(response.data.temperature.feels_like);
   timeElement.innerHTML = formatTime(response.data.time * 1000);
+  iconElement.setAttribute("src", response.data.condition.icon_url);
+  iconElement.setAttribute("alt", response.data.condition.description);
 }
 
 let city = "London";
