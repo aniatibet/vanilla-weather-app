@@ -61,3 +61,8 @@ li:first-letter {
   font-size: 16px;
   top: 1;
 }
+
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
